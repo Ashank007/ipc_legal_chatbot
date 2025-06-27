@@ -62,7 +62,6 @@ Ensure you have the following installed on your system:
 ## 1. Clone the Repository
 
 Begin by cloning the project repository to your local machine:
-Bash
 
 ```
 git clone https://github.com/Ashank007/ipc_legal_chatbot.git
@@ -71,17 +70,16 @@ cd ipc_legal_chatbot
 
 ## 2. Set Up Ollama and Llama 3.1 Model
 
-The chatbot relies on the Llama 3.1 model running via Ollama.
+- The chatbot relies on the Llama 3.1 model running via Ollama.
 
-    Ensure Ollama is running: Make sure the Ollama server is active in your background. You can usually start it by simply installing it or running ollama serve if it's not set to auto-start.
+- Ensure Ollama is running: Make sure the Ollama server is active in your background. You can usually start it by simply installing it or running ollama serve if it's not set to auto-start.
 
-    Download the Llama 3.1 model: Pull the specific model required by the application:
-    Bash
+- Download the Llama 3.1 model: Pull the specific model required by the application:
 
+```
 ollama run llama3.1
-
-This command will download the model if it's not already present and then start an interactive session. You can simply close this session (/bye) once the download is complete.
-
+```
+- This command will download the model if it's not already present and then start an interactive session. You can simply close this session (/bye) once the download is complete.
 
 ## 🏃‍♀️ Running the Application
 
