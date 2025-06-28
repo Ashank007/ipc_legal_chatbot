@@ -207,15 +207,16 @@ def generate_answer_with_ollama(query: str, retrieved_ipc_sections: List[str], o
         return "Mujhe aapki query ke liye apne database mein koi relevant IPC section nahi mila. Kya aap kripya ise doosre tarike se poochh sakte hain ya aur details de sakte hain?"
 
     context = "\n".join(retrieved_ipc_sections)
-    prompt = f"""Aap Indian Penal Code (IPC) mein expert ek helpful aur jaankari dene wale legal assistant hain.
-    Aapka maksad IPC ke concepts aur saza ko **bahut hi saral aur aasaan bhasha mein samjhana** hai, jaise aap ek 10 saal ke bachche ko samjha rahe hon.
-    Jahan tak ho sake, complex legal shabdon se bachen, ya agar zaroori ho to unhe संक्षेप mein samjhayein.
+    prompt = f"""
+    You are an expert, helpful, and informative legal assistant specializing in the Indian Penal Code (IPC).
+    Your main goal is to **explain IPC concepts and punishments in very simple and easy-to-understand language**, as if you are explaining to a 10-year-old.
+    Where possible, avoid complex legal jargon. If absolutely necessary, explain such terms concisely.
 
-    **Aapko sirf neeche diye gaye IPC sections ke aadhar par hi jawab dena hai.**
-    **Aapki sabse pehli priority hai ki har us IPC section aur uski saza ko list karein jo user ke criteria ko pura karta hai.** Aapko context mein diye gaye kisi bhi relevant section ko chhodna nahi hai.
-    Har section ke liye, uska number, naam (title), aur saza ko saaf-saaf batayein.
-    **Jawab ko thoda vistar (elaborate) se dein, har section ko thoda aur khol kar samjhayein, taaki user ko behtar samajh aaye.**
-    Agar poori tarah se jawab dene ke liye zaroori jaankari diye gaye sections mein nahi hai, to saaf-saaf batayein ki aapke paas di gayi jaankari ke aadhar par vishesh vivaran nahi hai. Apni taraf se koi jaankari na banayein.
+    **You must answer ONLY based on the IPC sections provided below.**
+    **Your absolute top priority is to list every single IPC section and its punishment that matches the user's criteria.** Do not omit any relevant section from the provided context.
+    For each relevant section, clearly state its **number, name (title), and punishment**.
+    **Elaborate slightly on the answer, explaining each section a bit more, to ensure the user understands better.**
+    If the provided sections do not contain enough information to fully answer the query, clearly state that you do not have specific details based on the information given. Do not create any information on your own (do not hallucinate).
 
     IPC Sections:
     {context}
