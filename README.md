@@ -74,7 +74,7 @@ cd ipc_legal_chatbot
 
 - Ensure Ollama is running: Make sure the Ollama server is active in your background. You can usually start it by simply installing it or running ollama serve if it's not set to auto-start.
 
-- Download the Llama 3.1 model: Pull the specific model required by the application:
+- Download the llama 3.1 model: Pull the specific model required by the application:
 
 ```
 ollama run llama3.1
@@ -117,12 +117,6 @@ Run the script:
 ### Option B: Manual Setup (Local Development)
 
 Choose this option if you prefer manual control or if the automated script encounters issues.
-
-- Clone Repository:
-```
-git clone https://github.com/Ashank007/ipc_legal_chatbot.git
-cd ipc_legal_chatbot
-```
 
 - Install uv (Fast Python Package Manager):
 ```
